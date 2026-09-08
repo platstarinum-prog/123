@@ -8,7 +8,6 @@ const Advantages = lazy(() => import('../components/Advantages'));
 const TopProject = lazy(() => import('../components/TopProject'));
 const Prices = lazy(() => import('../components/Prices'));
 const Process = lazy(() => import('../components/Process'));
-const Faq = lazy(() => import('../components/Faq'));
 const Contact = lazy(() => import('../components/Contact'));
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
           <TopProject />
           <Prices />
           <Process />
-          <Faq />
           <Contact />
         </Suspense>
       </main>
