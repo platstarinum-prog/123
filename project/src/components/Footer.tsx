@@ -13,7 +13,7 @@ export default function Footer() {
           className="flex flex-col md:flex-row items-center justify-between gap-6"
         >
           <Link to="/" className="text-xl sm:text-2xl font-black tracking-tight whitespace-nowrap">
-            KRVTSV<span className="text-rose-500"> CORP</span>
+            KRVTSV<span className="text-gray-500"> CORP</span>
           </Link>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
@@ -26,7 +26,7 @@ export default function Footer() {
               <Link
                 key={l.href}
                 to={l.href}
-                className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-rose-500 transition-colors whitespace-nowrap"
+                className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-white transition-colors whitespace-nowrap"
               >
                 {l.label}
               </Link>
@@ -34,10 +34,10 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://t.me/holdingtokens" target="_blank" rel="noopener noreferrer" className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-rose-500 transition-colors whitespace-nowrap">
+            <a href="https://t.me/holdingtokens" target="_blank" rel="noopener noreferrer" className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-white transition-colors whitespace-nowrap">
               Telegram
             </a>
-            <a href="mailto:krvtsvcorp@gmail.com" className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-rose-500 transition-colors whitespace-nowrap">
+            <a href="mailto:krvtsvcorp@gmail.com" className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-white transition-colors whitespace-nowrap">
               Email
             </a>
           </div>

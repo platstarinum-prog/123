@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import { Spotlight } from '../lib/anim';
 
 const plans = [
   {
@@ -40,9 +39,9 @@ export default function Prices() {
           transition={{ duration: 0.6 }}
           className="mb-12 md:mb-20 text-center lg:text-left"
         >
-          <p className="text-xs sm:text-[10px] font-black uppercase tracking-[0.3em] text-rose-600 mb-4">Вартість</p>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.9] text-gray-900 break-words">
-            Прозорі<br />{' '}<span className="text-rose-500">ціни</span>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 mb-4">Вартість</p>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] text-gray-900 break-words">
+            Прозорі <span className="text-gray-400">ціни</span>
           </h2>
           <p className="text-gray-500 mt-6 text-base sm:text-sm md:text-lg max-w-lg mx-auto lg:mx-0 break-words">
             Фіксована вартість без прихованих доплат. Ціна, яку погодили — остаточна.
@@ -51,46 +50,40 @@ export default function Prices() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
           {plans.map((plan, i) => (
-            <Spotlight
+            <motion.div
               key={plan.name}
-              className="rounded-3xl"
-              from={plan.highlighted ? 'rgba(244,63,94,0.25)' : 'rgba(244,63,94,0.10)'}
-              to="rgba(139,92,246,0.08)"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className={`relative rounded-xl p-6 md:p-8 flex flex-col transition-all duration-300 border h-full ${
+                plan.highlighted
+                  ? 'bg-gray-900 text-white border-gray-900 shadow-xl scale-[1.02] md:scale-105 z-10'
+                  : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg hover:shadow-gray-900/5'
+              }`}
             >
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={plan.highlighted ? { y: -2 } : { y: -4 }}
-                className={`relative rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-300 border-2 h-full ${
-                  plan.highlighted
-                    ? 'bg-gray-900 text-white border-gray-900 shadow-xl shadow-rose-500/10 scale-[1.02] md:scale-105 z-10'
-                    : 'bg-white border-gray-100 hover:border-rose-200 hover:shadow-xl hover:shadow-rose-500/10'
-                }`}
-              >
               {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-rose-600 to-red-500 text-white text-[10px] font-black uppercase tracking-widest px-5 py-2 rounded-full whitespace-nowrap shadow-lg shadow-rose-500/30">
+                <div className="absolute -top-3.5 left-6">
+                  <span className="bg-gray-900 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded whitespace-nowrap border border-gray-700">
                     Популярний
                   </span>
                 </div>
               )}
 
               <div className="mb-6">
-                <p className={`text-xs sm:text-[10px] font-black uppercase tracking-[0.25em] mb-2 ${plan.highlighted ? 'text-rose-600' : 'text-rose-600'}`}>
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-2">
                   {plan.duration}
                 </p>
-                <h3 className={`text-2xl md:text-2xl font-black uppercase tracking-wide mb-3 break-words ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-2xl font-bold tracking-tight mb-3 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
                   {plan.name}
                 </h3>
-                <p className={`text-base sm:text-sm leading-relaxed break-words ${plan.highlighted ? 'text-gray-500' : 'text-gray-500'}`}>
+                <p className={`text-base leading-relaxed ${plan.highlighted ? 'text-gray-400' : 'text-gray-500'}`}>
                   {plan.desc}
                 </p>
               </div>
 
               <div className="mb-8">
-                <p className={`text-3xl sm:text-3xl md:text-4xl font-black break-words ${plan.highlighted ? 'text-rose-600' : 'text-gray-900'}`}>
+                <p className={`text-3xl md:text-4xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
                   {plan.price}
                 </p>
               </div>
@@ -98,8 +91,8 @@ export default function Prices() {
               <div className="space-y-3 flex-1 mb-8">
                 {plan.features.map((f) => (
                   <div key={f} className="flex items-start gap-3">
-                    <Check size={18} className={`mt-0.5 flex-shrink-0 ${plan.highlighted ? 'text-rose-600' : 'text-rose-500'}`} />
-                    <p className={`text-base sm:text-sm font-medium leading-tight break-words ${plan.highlighted ? 'text-gray-300' : 'text-gray-600'}`}>{f}</p>
+                    <Check size={18} className={`mt-0.5 flex-shrink-0 ${plan.highlighted ? 'text-gray-400' : 'text-gray-400'}`} />
+                    <p className={`text-base font-medium leading-tight ${plan.highlighted ? 'text-gray-300' : 'text-gray-600'}`}>{f}</p>
                   </div>
                 ))}
               </div>
@@ -108,16 +101,15 @@ export default function Prices() {
                 href="https://t.me/holdingtokens"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-full text-center font-black uppercase tracking-widest text-xs py-4 rounded-full transition-all duration-300 active:scale-95 ${
+                className={`w-full text-center font-bold uppercase tracking-widest text-xs py-3.5 rounded-lg transition-all duration-300 ${
                   plan.highlighted
-                    ? 'bg-rose-600 text-white hover:bg-rose-400'
-                    : 'bg-gray-100 text-gray-900 hover:bg-gray-900 hover:text-white'
+                    ? 'bg-white text-gray-900 hover:bg-gray-200'
+                    : 'bg-gray-900 text-white hover:bg-gray-700'
                 }`}
               >
                 Замовити
               </a>
-              </motion.div>
-            </Spotlight>
+            </motion.div>
           ))}
         </div>
 

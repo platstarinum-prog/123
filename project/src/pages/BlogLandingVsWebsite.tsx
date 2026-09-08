@@ -15,38 +15,38 @@ export default function BlogLandingVsWebsite() {
       <Header />
       <main>
         <article className="pt-32 pb-16 md:pt-40 md:pb-24 max-w-3xl mx-auto px-4 sm:px-8">
-          <p className="text-xs sm:text-[10px] font-black uppercase tracking-[0.3em] text-rose-600 mb-4">Вибір · 10 квітня 2026</p>
-          <h1 className="text-4xl md:text-5xl font-black leading-tight text-gray-900 mb-6 break-words">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 mb-4">Вибір · 10 квітня 2026</p>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900 mb-6 break-words">
             Лендінг чи сайт: шо краще для бізнесу?
           </h1>
           <p className="text-gray-500 text-lg leading-relaxed mb-8">
             Найпопулярніше питання, яке мені задають: «Слухай, мені лендінг робити чи нормальний сайт?». Коротка відповідь — залежить. Але давай розберемо детально, щоб не викинути гроші на те, що не працює.
           </p>
 
-          <h2 className="text-2xl font-black text-gray-900 mt-10 mb-4">Коли лендінг — твій варіант</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Коли лендінг — твій варіант</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
             Лендінг — це одна сторінка з однією ціллю: заявка або продаж. Ідеально підходить, якщо ти запускаєш рекламу в Facebook/Instagram/Google і хочеш швидко тестувати гіпотезу. Роблю за 3–5 днів, ціна — від 3 000 грн.
           </p>
 
-          <h2 className="text-2xl font-black text-gray-900 mt-10 mb-4">Коли потрібен повноцінний сайт</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Коли потрібен повноцінний сайт</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
             Якщо в тебе кілька напрямків бізнесу, каталог послуг або ти хочеш вести блог — однією сторінкою не обійтись. Багатосторінковий сайт дає більше точок входу з пошуку Google і краще покриває питання клієнтів. Вартість — від 3 000 грн, термін — 7–14 днів.
           </p>
 
-          <h2 className="text-2xl font-black text-gray-900 mt-10 mb-4">А коли вже інтернет-магазин</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">А коли вже інтернет-магазин</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Продаєш товари онлайн? Тут без магазину ніяк. Кошик, оплата, каталог — це вже окремий проєкт. <Link to="/services/ecommerce" className="text-rose-600 font-bold hover:underline">Розробка e-commerce</Link> від 5 000 грн.
+            Продаєш товари онлайн? Тут без магазину ніяк. Кошик, оплата, каталог — це вже окремий проєкт. <Link to="/services/ecommerce" className="text-gray-900 font-semibold hover:underline">Розробка e-commerce</Link> від 5 000 грн.
           </p>
 
-          <h2 className="text-2xl font-black text-gray-900 mt-10 mb-4">Коротке порівняння</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Коротке порівняння</h2>
           <div className="overflow-x-auto mb-6">
             <table className="w-full text-left text-sm border-collapse">
               <thead>
-                <tr className="border-b-2 border-gray-200">
-                  <th className="py-3 pr-4 font-black text-gray-900">Тип</th>
-                  <th className="py-3 pr-4 font-black text-gray-900">Ціна</th>
-                  <th className="py-3 pr-4 font-black text-gray-900">Термін</th>
-                  <th className="py-3 font-black text-gray-900">Коли</th>
+                <tr className="border-b border-gray-300">
+                  <th className="py-3 pr-4 font-bold text-gray-900">Тип</th>
+                  <th className="py-3 pr-4 font-bold text-gray-900">Ціна</th>
+                  <th className="py-3 pr-4 font-bold text-gray-900">Термін</th>
+                  <th className="py-3 font-bold text-gray-900">Коли</th>
                 </tr>
               </thead>
               <tbody className="text-gray-600">
@@ -57,15 +57,15 @@ export default function BlogLandingVsWebsite() {
             </table>
           </div>
 
-          <h2 className="text-2xl font-black text-gray-900 mt-10 mb-4">Коротко по ділу</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Коротко по ділу</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Тестуєш гіпотезу — бери лендінг. Бізнес росте — розширимо до повноцінного сайту. Сумніваєшся, що обрати? <Link to="/services/web-developer-kyiv" className="text-rose-600 font-bold hover:underline">Напиши мені</Link> — підкажу, що краще під твою задачу.
+            Тестуєш гіпотезу — бери лендінг. Бізнес росте — розширимо до повноцінного сайту. Сумніваєшся, що обрати? <Link to="/services/web-developer-kyiv" className="text-gray-900 font-semibold hover:underline">Напиши мені</Link> — підкажу, що краще під твою задачу.
           </p>
 
-          <div className="mt-12 bg-rose-50 rounded-3xl p-8 text-center">
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Не знаєш, що вибрати?</h3>
+          <div className="mt-12 bg-gray-50 rounded-xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Не знаєш, що вибрати?</h3>
             <p className="text-gray-500 mb-6">Пиши в Telegram — розберемось безкоштовно.</p>
-            <a href="https://t.me/holdingtokens" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gray-900 text-white font-black uppercase tracking-widest text-sm px-8 py-5 rounded-full hover:bg-rose-600 transition-colors">
+            <a href="https://t.me/holdingtokens" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gray-900 text-white font-semibold text-sm px-8 py-4 rounded-lg hover:bg-gray-700 transition-colors">
               Написати нам
             </a>
           </div>

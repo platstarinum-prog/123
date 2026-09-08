@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
-import { Spotlight } from '../lib/anim';
 
 const faqs = [
   {
@@ -62,41 +61,40 @@ export default function Faq() {
           transition={{ duration: 0.6 }}
           className="mb-12 md:mb-16 text-center"
         >
-          <p className="text-xs sm:text-[10px] font-black uppercase tracking-[0.3em] text-rose-600 mb-4">FAQ</p>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[0.9] text-gray-900 break-words">
-            Питання<br />{' '}<span className="text-rose-500">та відповіді</span>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 mb-4">FAQ</p>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.95] text-gray-900 break-words">
+            Питання <span className="text-gray-400">та відповіді</span>
           </h2>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((item, i) => {
             const isOpen = open === i;
             return (
-              <Spotlight key={item.q} className="rounded-3xl" from="rgba(244,63,94,0.10)" to="rgba(139,92,246,0.06)">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className={`rounded-3xl border-2 transition-colors ${isOpen ? 'border-rose-200 bg-rose-50/40' : 'border-gray-100 bg-white'}`}
+              <motion.div
+                key={item.q}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className={`rounded-xl border transition-colors ${isOpen ? 'border-gray-900' : 'border-gray-200'}`}
+              >
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 text-left px-6 md:px-7 py-5"
+                  aria-expanded={isOpen}
                 >
-                  <button
-                    onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 text-left px-6 md:px-8 py-5 md:py-6"
-                    aria-expanded={isOpen}
-                  >
-                    <span className="font-black uppercase tracking-wide text-gray-900 text-base sm:text-lg break-words">{item.q}</span>
-                    <span className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center ${isOpen ? 'bg-rose-600 text-white' : 'bg-gray-100 text-gray-900'}`}>
-                      {isOpen ? <Minus size={18} /> : <Plus size={18} />}
-                    </span>
-                  </button>
-                  {isOpen && (
-                    <p className="px-6 md:px-8 pb-6 md:pb-7 text-gray-500 leading-relaxed text-sm sm:text-base break-words">
-                      {item.a}
-                    </p>
-                  )}
-                </motion.div>
-              </Spotlight>
+                  <span className="font-bold text-gray-900 text-base sm:text-lg">{item.q}</span>
+                  <span className={`flex-shrink-0 w-8 h-8 rounded flex items-center justify-center ${isOpen ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-700'}`}>
+                    {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                  </span>
+                </button>
+                {isOpen && (
+                  <p className="px-6 md:px-7 pb-6 text-gray-600 leading-relaxed text-base">
+                    {item.a}
+                  </p>
+                )}
+              </motion.div>
             );
           })}
         </div>
