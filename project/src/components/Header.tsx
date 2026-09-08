@@ -6,12 +6,8 @@ import NavLink from './NavLink';
 
 const links = [
   { label: 'Переваги', href: '/#advantages' },
-  { label: 'Проєкт', href: '/#project' },
-  { label: 'Лендінг', href: '/services/landing' },
-  { label: 'Блог', href: '/blog' },
+  { label: 'Проєкти', href: '/#project' },
   { label: 'Ціни', href: '/#prices' },
-  { label: 'Процес', href: '/#process' },
-  { label: 'Питання', href: '/#faq' },
   { label: 'Контакти', href: '/#contact' },
 ];
 

@@ -21,8 +21,11 @@ React, TypeScript, Vite, Tailwind CSS, Framer Motion, Node.js, PostgreSQL, Cloud
 
 | Проєкт | Опис | Стек |
 |--------|------|------|
+| [Autostandart](https://autostandart.org) | Лендінг СТО/автосервісу | React, Vite, Tailwind |
+| [Buksy](https://buksy.shop) | Інтернет-магазин одягу | React, Node.js, PostgreSQL |
+| [PM Livoberezhniy](https://pm-livoberezhniy.art) | Лендінг перманентного макіяжу | React, Vite, Tailwind |
+| [Angelina Tarot](https://angelina-taro.me) | Лендінг для таролога | React, Vite, Tailwind |
 | [Lyzeum 167](https://lizei167.pages.dev) | Шкільний портал | React, Vite, Tailwind |
-| [Buksy](https://buksy-shop.pages.dev) | Магазин книг | React, Node.js, PostgreSQL |
 | [5 AM](https://5-am.pages.dev) | Бренд-лендінг | React, Vite, Tailwind |
 
 ## Контакти

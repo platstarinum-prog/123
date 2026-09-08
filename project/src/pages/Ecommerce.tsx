@@ -9,7 +9,7 @@ export default function Ecommerce() {
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Seo
         title="Розробка e-commerce сайтів — інтернет-магазин під ключ | KRVTSV CORP"
-        description="Розробка e-commerce сайтів під ключ: кошик, каталог, фільтри, оплата (WayForPay/LiqPay/Stripe), адмінка та інтеграція з Nova Poshta. Ціна від 15 000 грн, запуск від 14 днів."
+        description="Розробка e-commerce сайтів під ключ: кошик, каталог, фільтри, оплата (WayForPay/LiqPay/Stripe), адмінка та інтеграція з Nova Poshta. Ціна від 5 000 грн, запуск від 14 днів."
         path="/services/ecommerce"
       />
       <Header />
@@ -67,7 +67,7 @@ export default function Ecommerce() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-gray-500">Ціна — <span className="text-rose-600 font-black">від 15 000 грн</span>, термін — від 14 днів.</p>
+            <p className="mt-8 text-gray-500">Ціна — <span className="text-rose-600 font-black">від 5 000 грн</span>, термін — від 14 днів.</p>
           </div>
         </section>
 

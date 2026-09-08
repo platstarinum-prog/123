@@ -33,9 +33,12 @@ KRVTSV CORP — українська веб-студія, заснована у 
 
 ## Портфоліо
 
-1. **Lyzeum 167** — шкільний портал. React/Vite, адаптив, новини, розклад. https://lizei167.pages.dev
-2. **Buksy** — інтернет-магазин книг. React/Node.js/TypeScript/PostgreSQL. Кошик, оплата, адмінка. https://buksy-shop.pages.dev
-3. **5 AM** — бренд-лендінг. React/Vite, мінімалістичний дизайн. https://5-am.pages.dev
+1. **Autostandart** — лендінг СТО / автосервісу в Києві. React/Vite/Tailwind, форма запису, локальне SEO. https://autostandart.org
+2. **Buksy** — інтернет-магазин одягу (dark streetwear). React/Node.js/TypeScript/PostgreSQL. Кошик, оплата, адмінка. https://buksy.shop
+3. **PM Livoberezhniy** — лендінг перманентного макіяжу. React/Vite, портфоліо, запис. https://pm-livoberezhniy.art
+4. **Angelina Tarot** — лендінг для таролога, онлайн-запис. React/Vite. https://angelina-taro.me
+5. **Lyzeum 167** — шкільний портал. React/Vite, адаптив, новини, розклад. https://lizei167.pages.dev
+6. **5 AM** — бренд-лендінг. React/Vite, мінімалістичний дизайн. https://5-am.pages.dev
 
 ## Ціни
 

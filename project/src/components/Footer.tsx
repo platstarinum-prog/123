@@ -19,10 +19,8 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
             {[
               { label: 'Переваги', href: '/#advantages' },
-              { label: 'Проєкт', href: '/#project' },
-              { label: 'Блог', href: '/blog' },
+              { label: 'Проєкти', href: '/#project' },
               { label: 'Ціни', href: '/#prices' },
-              { label: 'Питання', href: '/#faq' },
               { label: 'Контакти', href: '/#contact' },
             ].map((l) => (
               <Link

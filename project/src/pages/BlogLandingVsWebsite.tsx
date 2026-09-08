@@ -25,17 +25,17 @@ export default function BlogLandingVsWebsite() {
 
           <h2 className="text-2xl font-black text-gray-900 mt-10 mb-4">Коли лендінг — твій варіант</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Лендінг — це одна сторінка з однією ціллю: заявка або продаж. Ідеально підходить, якщо ти запускаєш рекламу в Facebook/Instagram/Google і хочеш швидко тестувати гіпотезу. Роблю за 3–5 днів, ціна — від 4 000 грн.
+            Лендінг — це одна сторінка з однією ціллю: заявка або продаж. Ідеально підходить, якщо ти запускаєш рекламу в Facebook/Instagram/Google і хочеш швидко тестувати гіпотезу. Роблю за 3–5 днів, ціна — від 3 000 грн.
           </p>
 
           <h2 className="text-2xl font-black text-gray-900 mt-10 mb-4">Коли потрібен повноцінний сайт</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Якщо в тебе кілька напрямків бізнесу, каталог послуг або ти хочеш вести блог — однією сторінкою не обійтись. Багатосторінковий сайт дає більше точок входу з пошуку Google і краще покриває питання клієнтів. Вартість — від 10 000 грн, термін — 7–14 днів.
+            Якщо в тебе кілька напрямків бізнесу, каталог послуг або ти хочеш вести блог — однією сторінкою не обійтись. Багатосторінковий сайт дає більше точок входу з пошуку Google і краще покриває питання клієнтів. Вартість — від 3 000 грн, термін — 7–14 днів.
           </p>
 
           <h2 className="text-2xl font-black text-gray-900 mt-10 mb-4">А коли вже інтернет-магазин</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Продаєш товари онлайн? Тут без магазину ніяк. Кошик, оплата, каталог — це вже окремий проєкт. <Link to="/services/ecommerce" className="text-rose-600 font-bold hover:underline">Розробка e-commerce</Link> від 15 000 грн.
+            Продаєш товари онлайн? Тут без магазину ніяк. Кошик, оплата, каталог — це вже окремий проєкт. <Link to="/services/ecommerce" className="text-rose-600 font-bold hover:underline">Розробка e-commerce</Link> від 5 000 грн.
           </p>
 
           <h2 className="text-2xl font-black text-gray-900 mt-10 mb-4">Коротке порівняння</h2>
@@ -50,9 +50,9 @@ export default function BlogLandingVsWebsite() {
                 </tr>
               </thead>
               <tbody className="text-gray-600">
-                <tr className="border-b border-gray-100"><td className="py-3 pr-4 font-bold">Лендінг</td><td className="py-3 pr-4">від 4 000 грн</td><td className="py-3 pr-4">3–5 днів</td><td className="py-3">Запуск реклами</td></tr>
-                <tr className="border-b border-gray-100"><td className="py-3 pr-4 font-bold">Бізнес-сайт</td><td className="py-3 pr-4">від 10 000 грн</td><td className="py-3 pr-4">7–14 днів</td><td className="py-3">Багато послуг</td></tr>
-                <tr><td className="py-3 pr-4 font-bold">Магазин</td><td className="py-3 pr-4">від 15 000 грн</td><td className="py-3 pr-4">14–21 день</td><td className="py-3">Продаж товарів</td></tr>
+                <tr className="border-b border-gray-100"><td className="py-3 pr-4 font-bold">Лендінг</td><td className="py-3 pr-4">від 3 000 грн</td><td className="py-3 pr-4">3–5 днів</td><td className="py-3">Запуск реклами</td></tr>
+                <tr className="border-b border-gray-100"><td className="py-3 pr-4 font-bold">Бізнес-сайт</td><td className="py-3 pr-4">від 3 000 грн</td><td className="py-3 pr-4">7–14 днів</td><td className="py-3">Багато послуг</td></tr>
+                <tr><td className="py-3 pr-4 font-bold">Магазин</td><td className="py-3 pr-4">від 5 000 грн</td><td className="py-3 pr-4">14–21 день</td><td className="py-3">Продаж товарів</td></tr>
               </tbody>
             </table>
           </div>

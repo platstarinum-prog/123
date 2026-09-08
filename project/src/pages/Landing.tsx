@@ -9,7 +9,7 @@ export default function Landing() {
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Seo
         title="Замовити лендінг — розробка landing page під ключ | KRVTSV CORP"
-        description="Замовити лендінг у Києві та Україні. Розробка landing page на React/Vite від 4 000 грн, за 3-5 днів. Адаптивний дизайн, SEO, форма заявки. Прямий контакт з розробником."
+        description="Замовити лендінг у Києві та Україні. Розробка landing page на React/Vite від 3 000 грн, за 3-5 днів. Адаптивний дизайн, SEO, форма заявки. Прямий контакт з розробником."
         path="/services/landing"
       />
       <Header />
@@ -69,7 +69,7 @@ export default function Landing() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-gray-500">Ціна — <span className="text-rose-600 font-black">від 4 000 грн</span>, термін — від 3 днів.</p>
+            <p className="mt-8 text-gray-500">Ціна — <span className="text-rose-600 font-black">від 3 000 грн</span>, термін — від 3 днів.</p>
           </div>
         </section>
 
