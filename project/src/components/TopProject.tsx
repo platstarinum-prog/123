@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, CalendarDays, Coins } from 'lucide-react';
+import { ExternalLink, CheckCircle2 } from 'lucide-react';
+import { Tilt } from '../lib/anim';
 
 type Case = {
   name: string;
@@ -130,18 +131,29 @@ const cases: Case[] = [
   },
 ];
 
-function CaseCard({ item }: { item: Case }) {
+function CaseCard({ item, i }: { item: Case; i: number }) {
   const imgRef = useRef<HTMLImageElement>(null);
   return (
-    <motion.article
+    <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="group bg-white rounded-xl border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-xl hover:shadow-gray-900/5 transition-all duration-500 flex flex-col overflow-hidden"
+      transition={{ duration: 0.6, delay: i * 0.12 }}
+      whileHover={{ y: -6 }}
+      className="bg-white rounded-3xl overflow-hidden border-2 border-gray-100 hover:border-rose-200 shadow-sm hover:shadow-2xl hover:shadow-rose-500/10 transition-all duration-300 flex flex-col"
     >
-      <div className="relative overflow-hidden">
-        <div className="aspect-[16/10] overflow-hidden bg-gray-100">
+      <div className="relative bg-gray-900">
+        <div className="bg-gray-800 px-4 py-3 flex items-center gap-2">
+          <div className="flex gap-1.5">
+            <div className="w-3 h-3 rounded-full bg-red-500" />
+            <div className="w-3 h-3 rounded-full bg-yellow-400" />
+            <div className="w-3 h-3 rounded-full bg-green-500" />
+          </div>
+          <div className="flex-1 bg-gray-700 rounded-full text-[10px] sm:text-xs text-gray-400 px-4 py-1 ml-2 font-mono truncate">
+            {item.url.replace('https://', '')}
+          </div>
+        </div>
+        <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
           <picture>
             <source srcSet={item.img.replace(/\.(jpe?g|png)$/, '.avif')} type="image/avif" />
             <source srcSet={item.img.replace(/\.(jpe?g|png)$/, '.webp')} type="image/webp" />
@@ -151,9 +163,10 @@ function CaseCard({ item }: { item: Case }) {
               alt={`${item.name} — ${item.type}`}
               width={800}
               height={500}
-              loading="lazy"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchPriority={i === 0 ? 'high' : 'auto'}
               decoding="async"
-              className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              className="w-full h-full object-cover"
               onError={() => {
                 if (imgRef.current && !imgRef.current.src.startsWith('data:')) {
                   imgRef.current.src = FALLBACK(item.name);
@@ -161,57 +174,48 @@ function CaseCard({ item }: { item: Case }) {
               }}
             />
           </picture>
-        </div>
-
-        <div className="absolute top-4 left-4 flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur border border-gray-200 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-gray-700">
-            <span className="w-1.5 h-1.5 rounded-full bg-gray-900" />
-            {item.category}
-          </span>
-          <span className="inline-flex items-center rounded-full bg-white/90 backdrop-blur border border-gray-200 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-gray-500">
-            {item.year}
-          </span>
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent" />
+          <div className="absolute bottom-4 left-5 right-5">
+            <p className="text-white font-black text-xl sm:text-2xl uppercase break-words">{item.name}</p>
+            <p className="text-rose-400 text-xs sm:text-sm font-semibold uppercase tracking-widest">{item.type}</p>
+          </div>
         </div>
       </div>
 
       <div className="p-6 sm:p-7 flex flex-col flex-1">
-        <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 mb-1">{item.name}</h3>
-        <p className="text-sm font-medium text-gray-500 mb-4">{item.type}</p>
+        <div className="flex flex-wrap items-center gap-2 mb-4">
+          <span className="text-[10px] sm:text-xs font-black uppercase text-rose-700 bg-rose-100 px-3 py-1 rounded-full whitespace-nowrap">{item.category}</span>
+          <span className="text-[10px] sm:text-xs font-black uppercase text-gray-500 bg-gray-100 px-3 py-1 rounded-full whitespace-nowrap">{item.year}</span>
+        </div>
 
-        <p className="text-sm leading-relaxed text-gray-600 mb-5">{item.desc}</p>
+        <p className="text-gray-500 leading-relaxed text-sm sm:text-base mb-5 break-words">{item.desc}</p>
 
-        <div className="flex items-center gap-5 mb-5 border-t border-gray-100 pt-4">
-          <div className="flex items-center gap-2">
-            <CalendarDays size={16} className="text-gray-400" />
-            <div>
-              <p className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Термін</p>
-              <p className="text-sm font-bold text-gray-900">{item.duration}</p>
-            </div>
+        <div className="grid grid-cols-2 gap-3 mb-5">
+          <div className="bg-gray-50 rounded-2xl px-4 py-3">
+            <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Термін</p>
+            <p className="text-gray-900 font-black text-sm sm:text-base">{item.duration}</p>
           </div>
-          <div className="flex items-center gap-2">
-            <Coins size={16} className="text-gray-400" />
-            <div>
-              <p className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Бюджет</p>
-              <p className="text-sm font-bold text-gray-900">{item.price}</p>
-            </div>
+          <div className="bg-gray-50 rounded-2xl px-4 py-3">
+            <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Ціна</p>
+            <p className="text-gray-900 font-black text-sm sm:text-base">{item.price}</p>
           </div>
         </div>
 
         <div className="mb-5">
-          <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-3">Результат</p>
+          <p className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-gray-500 mb-3">Що зробили</p>
           <div className="space-y-2">
             {item.results.map((r) => (
-              <div key={r} className="flex items-center gap-2.5">
-                <span className="w-1 h-1 rounded-full bg-gray-900 flex-shrink-0" />
-                <p className="text-sm text-gray-700">{r}</p>
+              <div key={r} className="flex items-start gap-2">
+                <CheckCircle2 size={16} className="text-rose-500 mt-0.5 flex-shrink-0" />
+                <p className="text-gray-700 font-medium text-xs sm:text-sm break-words">{r}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-1.5 mb-6">
+        <div className="flex flex-wrap gap-2 mb-6">
           {item.tech.map((t) => (
-            <span key={t} className="text-[11px] font-medium text-gray-500 bg-gray-100 px-2.5 py-1 rounded">{t}</span>
+            <span key={t} className="text-[10px] sm:text-xs font-bold bg-white border-2 border-gray-100 px-3 py-1 rounded-full whitespace-nowrap">{t}</span>
           ))}
         </div>
 
@@ -219,39 +223,41 @@ function CaseCard({ item }: { item: Case }) {
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-900 font-semibold text-sm px-5 py-3.5 rounded-lg hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors duration-300"
+          className="group mt-auto inline-flex items-center justify-center gap-2 bg-gray-900 text-white font-black uppercase text-xs sm:text-sm px-6 py-4 rounded-full hover:bg-rose-500 transition-colors whitespace-nowrap"
         >
-          Відкрити сайт
-          <ArrowUpRight size={16} className="flex-shrink-0" />
+          <ExternalLink size={16} className="flex-shrink-0" />
+          Відкрити проєкт
         </a>
       </div>
-    </motion.article>
+    </motion.div>
   );
 }
 
 export default function TopProject() {
   return (
-    <section id="project" className="py-20 sm:py-28 bg-gray-50 overflow-hidden">
+    <section id="project" className="py-16 sm:py-24 bg-rose-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12 sm:mb-16 max-w-3xl"
+          className="mb-12 sm:mb-16"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 mb-4">Портфоліо</p>
-          <h2 className="text-[clamp(2rem,7vw,4.5rem)] font-bold tracking-tight leading-tight text-gray-900 break-words">
-            Реалізовані <span className="text-gray-400">проєкти</span>
+          <p className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-rose-600 mb-4">Портфоліо</p>
+          <h2 className="text-[clamp(2rem,7vw,5rem)] font-black uppercase leading-tight text-gray-900 break-words">
+            НАШІ<br />{' '}<span className="text-rose-500">ПРОЄКТИ</span>
           </h2>
-          <p className="text-gray-500 mt-5 text-base sm:text-lg leading-relaxed break-words">
-            Шість робіт з різних ніш: від локального автосервісу до dark-luxury магазину одягу. Кожен — з нуля, під задачу та бізнес клієнта.
+          <p className="text-gray-500 mt-4 text-base sm:text-sm md:text-lg max-w-xl break-words">
+            Реальні роботи з реальними термінами та цінами. Без постановки.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
-          {cases.map((item) => (
-            <CaseCard key={item.name} item={item} />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch [perspective:1200px]">
+          {cases.map((item, i) => (
+            <Tilt key={item.name} className="h-full" max={12}>
+              <CaseCard item={item} i={i} />
+            </Tilt>
           ))}
         </div>
       </div>

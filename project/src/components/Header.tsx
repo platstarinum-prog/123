@@ -44,8 +44,8 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <NavLink to="/" className="text-xl font-black tracking-tighter text-gray-900 hover:text-gray-500 transition-colors z-[110] whitespace-nowrap">
-          KRVTSV<span className="text-gray-400"> CORP</span>
+        <NavLink to="/" className="text-xl font-black tracking-tighter text-gray-900 hover:text-rose-500 transition-colors z-[110] whitespace-nowrap">
+          KRVTSV<span className="text-rose-500"> CORP</span>
         </NavLink>
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-8">
@@ -53,7 +53,7 @@ export default function Header() {
             <NavLink
               key={l.href}
               to={l.href}
-              className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600 hover:text-gray-900 transition-colors whitespace-nowrap"
+              className="text-[11px] font-black uppercase tracking-[0.2em] text-gray-600 hover:text-rose-500 transition-colors whitespace-nowrap"
             >
               {l.label}
             </NavLink>
@@ -62,7 +62,7 @@ export default function Header() {
             href="https://t.me/holdingtokens"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-900 text-white text-[11px] font-semibold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-gray-700 transition-all duration-300 whitespace-nowrap"
+            className="bg-rose-600 text-white text-[11px] font-black uppercase tracking-widest px-6 py-3 rounded-full hover:bg-gray-900 transition-all duration-300 shadow-lg shadow-rose-500/20 whitespace-nowrap"
           >
             Telegram
           </a>
@@ -97,7 +97,7 @@ export default function Header() {
                   <NavLink
                     to={l.href}
                     onClick={() => setOpen(false)}
-                    className="text-2xl sm:text-3xl font-black tracking-tighter text-gray-900 hover:text-gray-500 transition-colors break-words"
+                    className="text-2xl sm:text-3xl font-black uppercase tracking-tighter text-gray-900 hover:text-rose-500 transition-colors break-words"
                   >
                     {l.label}
                   </NavLink>
@@ -110,7 +110,7 @@ export default function Header() {
                 href="https://t.me/holdingtokens"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 bg-gray-900 text-white text-base sm:text-lg font-semibold uppercase tracking-widest px-8 py-5 rounded-full whitespace-nowrap"
+                className="mt-4 bg-rose-600 text-white text-base sm:text-lg font-black uppercase tracking-widest px-8 py-5 rounded-full shadow-xl shadow-rose-500/30 whitespace-nowrap"
               >
                 Написати нам
               </motion.a>

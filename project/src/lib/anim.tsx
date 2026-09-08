@@ -159,7 +159,7 @@ export function AnimatedGradientText({
 export function ScrollProgress() {
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-0.5 z-[200] origin-left bg-gray-900"
+      className="fixed top-0 left-0 right-0 h-1 z-[200] origin-left bg-gradient-to-r from-rose-500 via-red-500 to-rose-700"
       style={{ scaleX: useTransform(useSpring(useProgressValue(), { stiffness: 120, damping: 30 }), [0, 1], [0, 1]) }}
     />
   );
